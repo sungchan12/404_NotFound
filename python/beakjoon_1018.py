@@ -4,6 +4,8 @@ for _ in range(n):
     chess_color.append(input())
 # print(chess_color)
 
-for i in range(n-7):
-    for j in range(m-7):
-        
+for start in range(n-7):
+    for end in range(m-7):
+        for i in range(8):
+            for j in range(8):
+                
