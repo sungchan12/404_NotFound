@@ -1,3 +1,5 @@
+# sys가 input 내장함수보다 속도가 매우 빠르네
+# 시간초과 나는걸 input 내장함수 대신에 sys 사용하니깐 바로 통과
 import sys
 input = sys.stdin.readline
 
