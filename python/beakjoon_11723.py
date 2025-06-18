@@ -1,35 +1,28 @@
+import sys
+input = sys.stdin.readline
+
 m = int(input())
-s = []
-# print(m)
+s = set()
+
 for i in range(m):
     order = input().split()
     if len(order) == 1:
         string = order[0]
     else:
-        string, num = order[0], order[1]
-        # print(string, num)
+        string, num = order[0], int(order[1])
+    
     if string == 'add':
-        if num not in s:
-            s.append(num)
-        else:
-            pass
-    if string == 'check':
-        if num in s:
-            print(1)
-        else:
-            print(0)
-    if string == 'remove':
-        try:
-            s.remove(num)
-        except ValueError:
-            pass
-    if string == 'togle':
+        s.add(num)
+    elif string == 'check':
+        print(1 if num in s else 0)
+    elif string == 'remove':
+        s.discard(num)
+    elif string == 'toggle':
         if num in s:
             s.remove(num)
         else:
-            s.append(num)
-    if string == 'empty':
+            s.add(num)
+    elif string == 'empty':
         s.clear()
-    if string =='all':
-        s.sort()
-# print(s)
+    elif string == 'all':
+        s = set(range(1, 21))
