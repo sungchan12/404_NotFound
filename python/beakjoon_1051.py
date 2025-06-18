@@ -4,7 +4,6 @@ input = sys.stdin.readline
 def find_max(value):
     for i in range(n-value+1):
         for j in range(m-value+1):
-            #0,2 2,0
             if s[i][j] == s[i+value-1][j] == s[i][j+value-1] == s[i+value-1][j+value-1]:
                 return True
     return False
