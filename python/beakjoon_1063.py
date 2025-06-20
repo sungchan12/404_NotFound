@@ -41,12 +41,20 @@ print("stone_x : ", stone_x, " stone_y : ", stone_y)
 for _ in range(loop):
     order = input().strip()
     # print(x, y)
-    if order == 'B':
+    # 오른쪽으로 
+    if order == 'R':
+        if king_x >= 7 or (king_y == stone_y and (king_x + 1) == stone_x):
+            print("stone에 겹칩니다.")
+            pass
+        else:
+            king_x += 1
+            print(array_to_chess(king_y, king_x))
+    elif order == 'B':
         if king_y >= 7 or (king_x == stone_x and (king_y + 1) == stone_y):
             pass
-    else:
-        king_y += 1
-        # print(x, y)
-        # print(array_to_chess(y, x))
+        else:
+            king_y += 1
+            # print(x, y)
+            # print(array_to_chess(y, x))
 
 print(king_x, king_y)
