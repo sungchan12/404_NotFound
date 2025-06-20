@@ -22,7 +22,7 @@ def array_to_chess(row, col):
 def get_king_index(king_info):
     row = int(king_info[1])
     column = king_info[0]
-    print(column, row)
+    # print(column, row)
     return_col = ord(column) - ord('a')
     return_row = 8 - row
     return return_col, return_row
@@ -32,11 +32,17 @@ for i in range(8):
         if chess_board[i][j] == 0:
             chess_board[i][j] = array_to_chess(i, j)
 
+# print(chess_board)
+# print(get_king_index(king_info))
+x, y = map(int, get_king_index(king_info))
 
-print(chess_board)
-print(get_king_index(king_info))
-
-# for _ in range(loop):
-#     order = input().strip()
-#     if order == 'B':
-        
+for _ in range(loop):
+    order = input().strip()
+    # print(x, y)
+    if order == 'B':
+        if x <= 0 or y >= 7:
+            pass
+    else:
+        y += 1
+        # print(x, y)
+        # print(array_to_chess(y, x))
