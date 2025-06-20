@@ -42,9 +42,11 @@ for _ in range(loop):
     order = input().strip()
     # print(x, y)
     if order == 'B':
-        if king_y >= 7:
+        if king_y >= 7 or (king_x == stone_x and (king_y + 1) == stone_y):
             pass
     else:
         king_y += 1
         # print(x, y)
         # print(array_to_chess(y, x))
+
+print(king_x, king_y)
