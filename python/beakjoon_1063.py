@@ -49,12 +49,35 @@ for _ in range(loop):
         else:
             king_x += 1
             print(array_to_chess(king_y, king_x))
+    # 왼쪽으로
+    elif order == 'L':
+        if king_x <= 0 or (king_y == stone_y and (king_x - 1) == stone_x):
+            print("stone에 겹칩니다")
+            pass
+        else:
+            king_x -= 1
+            print(array_to_chess(king_y, king_x))
+    # 한 칸 아래로
     elif order == 'B':
         if king_y >= 7 or (king_x == stone_x and (king_y + 1) == stone_y):
             pass
         else:
             king_y += 1
-            # print(x, y)
-            # print(array_to_chess(y, x))
-
+            print(array_to_chess(king_y, king_x))
+    # 한 칸 위로
+    elif order == 'T':
+        if king_y <= 0(king_x == stone_x and (king_y - 1) == stone_y):
+            print("stone과 겹칩니다")
+            pass
+        else:
+            king_y -= 1
+            print(array_to_chess(king_y, king_x))
+    # 오른쪽 위 대각선으로
+    elif order == "RT":
+        if (king_x >= 7 or king_y <= 0) or (king_x == stone_x and (king_x+1) == stone_x and (king_y-1) == stone_y):
+            print("stone과 겹칩니다")
+            pass
+        else:
+            king_x += 1
+            king_y -= 1
 print(king_x, king_y)
