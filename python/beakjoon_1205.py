@@ -10,13 +10,13 @@ else:
     if n == p and score_list[-1] >= new_score:
         print(-1)
     else:
-        rank = 0
+        result = 0
         for i in range(n):
             if score_list[i] > new_score:
-                rank = i + 2
+                result = i + 2
             else:
-                rank = i + 1
+                result = i + 1
                 break
         else:
-            rank = n + 1
-        print(rank)
+            result = n + 1
+        print(result)
