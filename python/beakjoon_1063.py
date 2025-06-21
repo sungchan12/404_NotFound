@@ -90,6 +90,17 @@ for _ in range(loop):
             king_y -= 1
     # 오른쪽 아래
     elif order == "RB":
-        if:
+        if (king_x >= 7 or king_y >= 7) or ((king_x + 1) == stone_x and (king_y+1) == stone_y):
+            print("stone과 겹칩니다")
+            pass
         else:
+            king_x += 1
+            king_y += 1
+    elif order == "LB":
+        if (king_x <= 0 or king_y >= 7) or ((king_x -1) == stone_x and (king_y+1)==stone_y):
+            print("stone과 겹칩니다")
+            pass
+        else:
+            king_x -= 1
+            king_y += 1
 print(king_x, king_y)
