@@ -3,20 +3,20 @@ input = sys.stdin.readline
 
 n, new_score, p = map(int, input().split())
 
-if (n == 0):
+if n == 0:
     print(1)
 else:
     score_list = list(map(int, input().split()))
-    score_list.sort(reverse=True)
-    result = 0
-    if score_list[-1] == new_score:
+    if n == p and score_list[-1] >= new_score:
         print(-1)
-    else: 
-        for i in range(len(score_list)):
-            if score_list[i] <= new_score:
-                result = i+1
-                print(result)
+    else:
+        rank = 0
+        for i in range(n):
+            if score_list[i] > new_score:
+                rank = i + 2
+            else:
+                rank = i + 1
                 break
-            
-    # print(n, new_score, p)
-    # print(score_list)
+        else:
+            rank = n + 1
+        print(rank)
