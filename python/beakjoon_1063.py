@@ -80,4 +80,16 @@ for _ in range(loop):
         else:
             king_x += 1
             king_y -= 1
+    #왼쪽 위 대각 선
+    elif order == "LT":
+        if (king_x <= 0 or king_y <= 0) or ((king_x-1) == stone_x and (king_y-1) == stone_y):
+            print("stone과 겹칩니다")
+            pass
+        else:
+            king_x -= 1
+            king_y -= 1
+    # 오른쪽 아래
+    elif order == "RB":
+        if:
+        else:
 print(king_x, king_y)
