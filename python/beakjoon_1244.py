@@ -16,4 +16,27 @@ for _ in range(student_num):
                     status[i] = 1
                 else:
                     status[i] = 0
+    else:
+        center = switch-1
+        left = switch-2
+        right = switch
+        if (status[left] == status[right]):
+            if status[center] == 0:
+                status[center] = 1
+            else:
+                status[center] = 0
+            while (left >= 0 and right < n):
+                if status[left] == 0:
+                    status[left] = 1
+                    status[right] = 1
+                else:
+                    status[left] = 0
+                    status[right] = 0
+                left -= 1
+                right += 1
+        else:
+            if status[center] == 0:
+                status[center] = 1
+            else:
+                status[center] = 0
 print(status)
