@@ -11,5 +11,5 @@ for i in range(1, len(number_list[0])+1):
         temp.add(cut)
     # print(temp)
     if len(temp) == n:
-        print(len(temp))
+        print(i)
         break
