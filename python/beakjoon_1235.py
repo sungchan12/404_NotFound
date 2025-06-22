@@ -3,7 +3,7 @@ number_list = []
 cnt = 0
 for _ in range(n):
     number_list.append(str(input()))
-print(number_list)
+# print(number_list)
 for i in range(1, len(number_list[0])+1):
     temp = set()
     for number in number_list:
