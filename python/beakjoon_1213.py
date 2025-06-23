@@ -12,6 +12,15 @@ for num in alpha_cnt.values():
     if num % 2 == 1:
         odd_cnt += 1
 if odd_cnt <= 1:
-    print("가능")
+    # print("가능")
+    front = ""
+    middle =""
+    for alpha in alpha_cnt.keys():
+        cnt = alpha_cnt[alpha]
+        if cnt % 2 == 0:
+            front += alpha * (cnt // 2)
+        else:
+            middle = alpha
+    print(front + middle + front[::-1])
 else:
     print("I'm Sorry Hansoo")
