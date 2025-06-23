@@ -9,9 +9,9 @@ for alpha in n:
 # print(alpha_cnt)
 odd_cnt = 0
 for num in alpha_cnt.values():
-    if num % 3 == 0:
+    if num % 2 == 1:
         odd_cnt += 1
 if odd_cnt <= 1:
     print("가능")
 else:
-    print("불가능")
+    print("I'm Sorry Hansoo")
