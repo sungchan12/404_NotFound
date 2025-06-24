@@ -1,7 +1,10 @@
 import sys
 input = sys.stdin.readline
 
-# def index_to_chess(row, column):
+def array_to_chess(row, col):
+    chess_col = chr(ord('a') + col)
+    chess_row = 8 - row
+    return chess_col + str(chess_row)
 
 # def 
 chess_board = []
