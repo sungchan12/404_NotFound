@@ -15,11 +15,10 @@ if odd_cnt <= 1:
     # print("가능")
     front = ""
     middle =""
-    for alpha in alpha_cnt.keys():
+    for alpha in sorted(alpha_cnt.keys()):
         cnt = alpha_cnt[alpha]
-        if cnt % 2 == 0:
-            front += alpha * (cnt // 2)
-        else:
+        front += alpha * (cnt // 2)
+        if cnt % 2 == 1:
             middle = alpha
     print(front + middle + front[::-1])
 else:
