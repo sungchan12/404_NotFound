@@ -27,7 +27,7 @@ def check(before, now):
     for move_column, move_row in knight_moves:
         move_column = before_column + move_column
         move_row = before_row + move_row
-
+        # print(move_column, move_row)
         if move_column == now_column and move_row == now_row:
             return True
     return False
@@ -50,6 +50,10 @@ log = []
 for i in range(36):
     n = input().strip()
     log.append(n)
+
+if len(set(log)) != 36:
+    print("Invalid")
+    exit()
     
 valid_check = True
 for i in range(len(log)):
@@ -57,3 +61,11 @@ for i in range(len(log)):
         if not check(log[i-1], log[i]):
             valid_check = False
             break
+
+if valid_check:
+    if check(log[35], log[0]):
+        print("Valid")
+    else:
+        print("Invalid")
+else:
+    print("Invalid")
