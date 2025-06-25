@@ -18,7 +18,20 @@ def check(before, now):
     before_column, before_row = chess_to_index(before)
     now_column, now_row = chess_to_index(now)
     # print(now_column, now_row)
-    move_column, move_row = before_column+1, before_row-2
+    knight_moves = [
+        (1, -2), (1, 2),
+        (-1, -2), (-1, 2),
+        (2, -1), (2, 1),
+        (-2, -1), (-2, 1)
+    ]
+    for move_column, move_row in knight_moves:
+        move_column = before_column + move_column
+        move_row = before_row + move_row
+
+        if move_column == now_column and move_row == now_row:
+            return True
+    return False
+
 chess_board = []
 for _ in range(6):
     row = []
@@ -32,14 +45,15 @@ for _ in range(6):
 #             chess_board[i][j] = array_to_chess(i, j)
 
 # print(chess_board)
+
 log = []
-for i in range(3):
+for i in range(36):
     n = input().strip()
     log.append(n)
-
+    
+valid_check = True
 for i in range(len(log)):
     if i >= 1:
-        if check(log[i-1], log[i]):
-            print("valid")
-        else:
-            print("invalid")
+        if not check(log[i-1], log[i]):
+            valid_check = False
+            break
