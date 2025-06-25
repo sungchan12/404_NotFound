@@ -17,7 +17,8 @@ def chess_to_index(n):
 def check(before, now):
     before_column, before_row = chess_to_index(before)
     now_column, now_row = chess_to_index(now)
-    print(now_column, now_row)
+    # print(now_column, now_row)
+    move_column, move_row = before_column+1, before_row-2
 chess_board = []
 for _ in range(6):
     row = []
@@ -38,4 +39,7 @@ for i in range(3):
 
 for i in range(len(log)):
     if i >= 1:
-        check(log[i-1], log[i])
+        if check(log[i-1], log[i]):
+            print("valid")
+        else:
+            print("invalid")
