@@ -34,7 +34,7 @@ for i in range(months.get(month)-1):
 
 total_sec = total * 24 * 60 * 60
 total_day_sec = days_sum * 24 * 60 * 60
-current_time_sec = (minutes * 60)
+current_time_sec = (minutes * 60) + (hours * 60 * 60)
 
 elapsed_sec = total_day_sec + current_time_sec
 progress = (elapsed_sec / total_sec) * 100
