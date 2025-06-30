@@ -11,8 +11,14 @@
 
 n = input()
 # print(n)
-min_num = 0
+min_num = 1
 index = 0
 
 while index < len(n):
-    
+    min_num_str = str(min_num)
+    for i in min_num_str:
+        if index < len(n) and i == n[index]:
+            index += 1
+    min_num += 1
+    # print(min_num)
+print(min_num-1)
