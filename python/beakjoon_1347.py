@@ -35,23 +35,17 @@ for p in path:
 maze = []
 x_length = max(x_point) - min(x_point)+1
 y_length = max(y_point) - min(y_point)+1
-for i in range(x_length):
+for i in range(y_length):
     row = []
-    for j in range(y_length):
+    for j in range(x_length):
         row.append("#")
     maze.append(row)
-# print(maze)
-# 5 2x2
-# RRFRF
-# [0, 0, 1]
-# [0, -1, -1]
 
-# 6
-# LFFRFF 3x3
-# [0, 1, 2, 2, 2]
-# [0, 0, 0, 1, 2]
+for x, y in path:
+    x_path = x - min(x_point)
+    y_path = y - min(y_point)
 
-# 19 4x4
-# FLFRFFRFFFRFFRFLFLL
-# [0, 0, 1, 1, 1, 0, -1, -2, -2, -2, -1, -1]
-# [0, 1, 1, 2, 3, 3, 3, 3, 2, 1, 1, 0]
+    maze[x_path][y_path] = "."
+
+# for line in maze:
+#     print(line)
