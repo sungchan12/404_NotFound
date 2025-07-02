@@ -15,9 +15,9 @@ path = [(start_x, start_y)]
 direction = 0
 for move in moves:
     if move == "R":
-        direction += 1
+        direction = (direction + 1) % 4
     elif move == "L":
-        direction -= 1
+        direction = (direction - 1 + 4) % 4
     elif move == "F":
         start_x += direction_x[direction]
         start_y += direction_y[direction]
@@ -45,7 +45,7 @@ for x, y in path:
     x_path = x - min(x_point)
     y_path = y - min(y_point)
 
-    maze[x_path][y_path] = "."
+    maze[y_path][x_path] = "."
 
-# for line in maze:
-#     print(line)
+for line in maze:
+    print("".join(line))
