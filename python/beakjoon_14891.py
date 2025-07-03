@@ -1,3 +1,6 @@
+
+
+# ----------------- 내 코드 ----------------------
 cogwheel = [] # 톱니바퀴 s면 1 n이면 0
 for _ in range(4):
     cogwheel.append(list(map(int, input())))
@@ -41,13 +44,15 @@ score = 0
 for i in range(4):
     # print(line[0])
     if cogwheel[i][0] == 1:
-        if i < 2:
-            # print("%d 만큼 score에 더해졌습니다." % (i+1))
-            score += (i+1)
-        elif i == 2:
-            # print("%d 만큼 score에 더해졌습니다." % (i+2))
-            score += (i+2)
-        else:
-            # print("%d 만큼 score에 더해졌습니다." % 2*(i+1))
-            score += 2*(i+1)
+        score += 2**i
+    # if cogwheel[i][0] == 1:
+    #     if i < 2:
+    #         # print("%d 만큼 score에 더해졌습니다." % (i+1))
+    #         score += (i+1)
+    #     elif i == 2:
+    #         # print("%d 만큼 score에 더해졌습니다." % (i+2))
+    #         score += (i+2)
+    #     else:
+    #         # print("%d 만큼 score에 더해졌습니다." % 2*(i+1))
+    #         score += 2*(i+1)
 print(score)
