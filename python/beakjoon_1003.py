@@ -1,5 +1,6 @@
 import sys
 
+input = sys.stdin.readline
 def fibonacci(num):
     global zero_cnt, one_cnt
     if num == 0:
@@ -11,10 +12,10 @@ def fibonacci(num):
     else:
         return fibonacci(num - 1) + fibonacci(num - 2)
 
-n = int(sys.stdin.readline())
+n = int(input())
 
 for _ in range(n):
-    num = int(sys.stdin.readline())
+    num = int(input())
 
     zero_cnt = 0
     one_cnt = 0
