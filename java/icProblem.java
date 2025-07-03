@@ -6,7 +6,7 @@ import java.util.Random;
 // 전체 배열을 출력 하시오
 // 배열에 최대, 최소 값을 출력 하시오
 
-public class Main {
+public class icProblem {
     public static void main(String[] args) {
         int[] array = new int[5];
         Random random = new Random();
