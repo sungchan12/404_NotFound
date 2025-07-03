@@ -29,6 +29,9 @@ for _ in range(k):
     for i in range(4):
         if direction[i] == 1:
             cogwheel[i] = [cogwheel[i][7]] + cogwheel[i][:7]
-            # print(cogwheel[i])
+            # for line in cogwheel:
+            #     print(line)
         elif direction[i] == -1:
             cogwheel[i] = cogwheel[i][1:] + [cogwheel[i][0]]
+            # for line in cogwheel:
+            #     print(line)
