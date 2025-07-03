@@ -30,8 +30,24 @@ for _ in range(k):
         if direction[i] == 1:
             cogwheel[i] = [cogwheel[i][7]] + cogwheel[i][:7]
             # for line in cogwheel:
-            #     print(line)
+            #    print(line)
         elif direction[i] == -1:
             cogwheel[i] = cogwheel[i][1:] + [cogwheel[i][0]]
             # for line in cogwheel:
-            #     print(line)
+            #    print(line)
+# for line in cogwheel:
+#     print(line)
+score = 0
+for i in range(4):
+    # print(line[0])
+    if cogwheel[i][0] == 1:
+        if i < 2:
+            # print("%d 만큼 score에 더해졌습니다." % (i+1))
+            score += (i+1)
+        elif i == 2:
+            # print("%d 만큼 score에 더해졌습니다." % (i+2))
+            score += (i+2)
+        else:
+            # print("%d 만큼 score에 더해졌습니다." % 2*(i+1))
+            score += 2*(i+1)
+print(score)
