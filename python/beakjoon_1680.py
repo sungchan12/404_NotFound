@@ -1,4 +1,3 @@
-# 
 T = int(input()) # Test의 갯수
 
 for _ in range(T): 
